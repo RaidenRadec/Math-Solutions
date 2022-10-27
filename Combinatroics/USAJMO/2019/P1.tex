@@ -1,0 +1,72 @@
+Problem :
+
+There are $a + b$ bowls arranged in a row, numbered $1$ through $a + b$, where $a$ and
+$b$ are given positive integers. Initially, each of the first a bowls contains an apple,
+and each of the last b bowls contains a pear. A legal move consists of moving an
+apple from bowl $i$ to bowl $i + 1$ and a pear from bowl $j$ to bowl $j − 1$, provided that
+the difference i − j is even. We permit multiple fruits in the same bowl at the same
+time. The goal is to end up with the first b bowls each containing a pear and the
+last a bowls each containing an apple. Show that this is possible if and only if the
+product ab is even
+
+Solution :
+
+Claim : Apple at the $i^{th}$ position and pear at the $j^{th}$ position can swap if $i \equiv j \pmod{2} $
+
+
+\textcolor{blue}{Proof :}
+
+\begin{itemize}
+
+\item Lets say an apple is kept at position $i$ and a pear is kept at position $j$ where $j=i+2k$ 
+
+\item It can be clearly seen that difference of the position of the pear and the apple is a monovariant and decreases by $2$ for $j-i=2k$ ( When the move is done apple  moves from $i$ to $i+1$ and pear moves from $j$ to $j+1$ hence new difference is $j-i -2$) 
+
+\item Hence we can conclude that difference of position of pear and apple always remains even and hence the move can continue till apple reaches position $j$ and pear reaches position $i$
+
+We define swapping of an apple at position $i$ and pear at position $j=i+2k$ by $i \to j$
+
+
+\textcolor{red}{\textbf{Construction For $ab$ even }} :
+
+\textcolor{orange}{\textbf{Case 1  }} : Only one of $a,b$ is even 
+
+By using the claim do $1 \to a+b , 2 \to a+b-1 , \dots $ unless u get all the pears in the first $b$ bowls and all the apples in the last $a$ bowls  
+
+
+
+
+\textcolor{orange}{\textbf{Case 2  }} : Both  of $a,b$ is even 
+
+By using the claim do $1 \to a+1 , 2 \to a+2 ,  \dots $  unless u get all the pears in the first $b$ bowls and all the apples in the last $a$ bowls  
+
+ \textcolor{red}{\textbf{Proving that  $ab$ odd doesn't work }} :
+
+\item Let the number of apples in odd position of bowls  be $A_o$ and number of apples in even position of bowls  be $A_e$ 
+
+\item Let the number of pears in odd position of bowls  be $P_o$ and number of pears in even position of bowls be $P_e$ 
+
+
+
+ Claim : $ \mathbb{X} = A_o - A_e - ( P_o - P_e)$ is an invariant 
+
+
+\textcolor{blue}{Proof }:
+
+\item If a move is applicable on a apple and pear that means either both are in odd bowls or both are in even bowls 
+
+\item If both apple and pear are in odd places then on a move $\mathbb{X} = A_o - 1 - (A_e+1) - (P_o-1 - (P_e+1)) = A_o - A_e - ( P_o - P_e)$ . Same thing can be done for both at even places ,  hence we are done with the claim 
+
+FTSOC lets say we can achieve first $b$ bowls as pears and last $a$ bowls of apples 
+
+
+\item  Now at the start there are $\frac{a+1}{2}$ apples at odd bowls  and $\frac{a-1}{2}$ apples at even bowls , There are  $\frac{b+1}{2}$ pears at even  bowls  and $\frac{b-1}{2}$ pears at odd bowls
+
+\[ \mathbb{X} = 2 \]
+
+\item In the end on achieving the result we would have  $\frac{a-1}{2}$ apples at odd bowls  and $\frac{a+1}{2}$ apples at even bowls and   $\frac{b-1}{2}$ pears at even  bowls  and $\frac{b+1}{2}$ pears at odd bowls
+
+\[ \mathbb{X} = -2\]
+
+\item This contradicts the fact that $\mathbb{X}$ is an invariant , hence $ab$ odd doesnt work 
+\end{itemize}
