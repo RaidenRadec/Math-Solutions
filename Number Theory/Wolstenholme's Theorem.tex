@@ -1,0 +1,19 @@
+Problem : 
+
+Let $p > 3$ be a prime Prove that if \[ \sum_{i=1}^{p-1} \frac{1}{i} = \frac{m}{n} \]
+Then $p^2|m$
+
+Solution :
+
+We have to proof \[ \sum_{i=1}^{p-1} \frac{1}{i} \equiv ( \text{mod} p^2 ) \]
+
+We can write \[ 2 \sum_{i=1}^{p-1} \frac{1}{i} =  \sum_{i=1}^{p-1} ( \frac{1}{i} + \frac{1}{p-i} ) \] 
+
+\[ \sum_{i=1}^{p-1} ( \frac{1}{i} + \frac{1}{p-i}) = \sum_{i=1}^{p-1}  \frac{p}{i(p-i)} \]
+
+ \[ \sum_{i=1}^{p-1} \frac{1}{i(p-i)} \equiv \sum_{i=1}^{p-1} \frac{-1}{i^2} ( \text{mod} p)  ,  \sum_{i=1}^{p-1} \frac{-1}{i^2} \equiv  \sum_{i=1}^{p-1}i^2 ( \text{mod} p \] 
+ 
+ \[ \sum_{i=1}^{p-1} \frac{p}{i(p-i)} \equiv p \sum_{i=1}^{p-1} i^2  ( \text{mod} p^2) \]
+ 
+ Which is true as it can be seen on the summation of first $(p-1)$ terms of  $i^2$
+
