@@ -1,0 +1,34 @@
+Problem :
+
+Let $n$ be a positive integer. Define a sequence by setting $a_1 = n$ and for each $k > 1$, letting $a_k$ to be the unique integer in the range
+$0 \le a_k \le k-1$ for which $a_1 + a_2 + \dots + a_k$ is divisible by $k$ For instance, when $n = 9$, the obtained sequence is $9,1,2,0,3,3,3 \dots $ Prove that for any $n$, the sequence $a_1,a_2, \dots $
+eventually becomes constant.
+
+Solution :
+
+We check for odd and even cases
+
+When $k$ is even 
+
+
+We can see that  \[ d_1d_k=d_2d_{k-1}=d_3d_{k-2}= \dots d_sd_{s+1}=n \]
+
+ \[ d_1d_2 + d_2d_3 + \dots + d_{k-1}d_k = d_1d_2 +\frac{d_1d_2}{n^2} + d_2d_3+\frac{d_2d_3}{n^2} + \dots + d_{s}d_{s+1} \]  Now  \[d_1d_2<d_1d_k=n, d_2d_3<d_2d_{k_1}=n , \dots , d_sd_{s+1}=n \]
+ 
+ We get \[ d_1d_2 +\frac{d_1d_2}{n^2} + d_2d_3+\frac{d_2d_3}{n^2} + \dots + d_{s}d_{s+1} < d_1d_k+d_2d_{k-1}+ \dots+d_sd_{s+1} \]
+ 
+ \[ = (n)\times s + \frac{s-1}{n} = \frac{n^2}{2} + \frac{1}{2} -\frac{1}{n} < n^2 \]
+ 
+ 
+ 
+ Similarly $k$ = odd also work
+
+Firstly when $n$ is a prime $d_1d_2 + d_2d_3 + \dots + d_{k-1}d_k$ is always a divisor of $n^2$
+
+Now when $n$ is composite 
+
+In $n^2$ we can see that the largest divisor of $n^2$ is $d_{k-1}^2d_2$ 
+
+As  \[ d_k>d_{k-1} , d_kd_{k-1}>d_{k-1}^2 \] The sum \[ d_1d_2 + d_2d_3 + \dots + d_{k-1}d_k > d_1d_2+ d_2d_3 + \dots + d_{k-1}^2\frac{d_2}{d_3} + d_{k-1}^2 > d_{k-1}^2d_2 \] 
+
+Hence it wont be a divisor
