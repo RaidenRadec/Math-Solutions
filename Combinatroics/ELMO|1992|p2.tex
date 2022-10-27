@@ -1,0 +1,16 @@
+Problem : 
+
+Mr. Fat moves around on the lattice points according to the following rules: From point (x, y) he may move to any of the points $(y, x), (3x, −2y),
+(−2x, 3y), (x + 1, y + 4)$ and $(x − 1, y − 4)$. Show that if he starts at $(0, 1)$ he can never get to $(0, 0)$.
+
+
+Solution :
+
+We consider the sum of the $x$ and $y$ coordinates of the move 
+   
+   It's important to note that  \[y+x = x+y\] \[ 3x-2y = 3(x+y)-5y \]
+   \[ 3y - 2x = 3(x+y) - 5x\] \[ x-1 + y-4 = (x+y)-5\]\[x+1 + y+4 = (x+y)+5\]
+   
+Take the quantity $ \mathbb{L} = x+y \pmod{5}$ , it can be seen from the result of the moves that $\mathbb{L}$ either remains constant or it multiplies by $3$
+
+As initially $x+y=1$ hence we can never get $\mathbb{L}=0$ so it is impossible to get to $(0,0)$
