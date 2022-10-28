@@ -1,0 +1,52 @@
+Problem :
+
+Determine all pairs $(n, k)$ of distinct positive integers such that there exists a positive integer $s$ for which 
+the number of divisors of $sn$ and of $sk$ are equal.
+
+Solution :
+
+\textcolor{red}{Answer :} All pairs of $(m,n)$ satisfies for $m \nmid n$ and $n \nmid m$
+
+\begin{itemize}
+
+\item It can be seen that for all the pairs in which $m | n $ or $n | m$  when any number is multiplied the greater of $m,n$ in the above case would have more divisors and the divisors of the smaller number would be a subset of the set of divisors of the larger one
+
+\item Now take the pairs of $(m,n)$
+ for which  $m \nmid n$ and $n \nmid m$ 
+ 
+ 
+ \item Now if the pairs are coprime then any prime different from the prime divisors of both $m,n$ would work ( there are infinte primes)  , In $m=n$ then any numbr would work 
+ 
+ \item Now lets take \[m = p_1^{a_1}p_2^{a_2} \dots p_e^{a_e} \]\[n = p_1^{b_1}p_2^{b_2} \dots p_e^{b_e}\]\[s = p_1^{c_1}p_2^{c_2} \dots p_e^{c_e}\]
+ 
+ From the number of divisors of $ms,ns$ we have \[ (a_1+c_1+1)(a_2+c_2+1) \dots (a_e+c_e+1) = (b_1+c_1+1)(b_2+c_2+1) \dots (b_e+c_e+1) \]
+ \[ \frac{(b_1+c_1+1)(b_2+c_2+1) \dots (b_e+c_e+1)}{(a_1+c_1+1)(a_2+c_2+1) \dots (a_e+c_e+1)} = 1 \]
+ 
+
+ 
+ Claim : For some real $x \ge a+1$ there exist a $c$ such that \[ \frac{b+c+1}{a+c+1} = \frac{x+1}{x} \]
+ 
+ \textcolor{blue}{Proof } :
+ \[ \frac{b+c+1}{a+c+1} = \frac{1+x}{x}\]
+  
+  \[ bx+cx+1 = ax+cx+1+a+c+1 \] 
+   \[ c= x(b-a) -(a+1)\]  
+   
+   
+   \item Let $Y$ be a large number greater than all $a_i,b_i$ 
+   
+   WLOG lets say $i$ from $1$ to $f$  , $b_i>a_i$ and from $f+1$ to $e$ , $b_i<a_i$
+   
+   \textcolor{orange}{Case 1} : $b_i>a_i$
+   
+   From the above claim we can set $c_i$ in such a way such that \[ \frac{b_i+c_i+1}{a_i+c_i+1} = \frac{fY+i}{fY+i-1} \]
+   
+    \textcolor{orange}{Case 2} : $b_i < a_i$ 
+    
+From the above claim we can set $c_{f+i}$ in such a way that  \[ \frac{a_{f+i}+c_{f+i}+1}{b_{f+i}+c_{f+i}+1} = \frac{(e-f)Y+i}{(e-f)Y+i-1} \]
+
+\item   Now we can say 
+
+\[\prod_{i=1}^{e} \frac{b_i+c_i+1}{a_i+c_i+1} = \prod_{i=1}^{f}\frac{b_i+c_i+1}{a_i+c_i+1}  \enspace  \prod_{i=1}^{e-f} \frac{b_{f+i}+c_{f+i}+1}{a_{f+i}+c_{f+i}+1} \] \[ = \prod_{i=1}^{f} \frac{fY+i}{fY+i-1} \enspace \prod_{i=1}^{e-f} \frac{(e-f)Y+i-1}{(e-f)Y+i} \]\[=1\] 
+
+\end{itemize}
